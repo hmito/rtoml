@@ -5,6 +5,11 @@ close(cin)
 sep = "\n"
 str = paste0(lines, collapse=sep)
 
+as_toml_vector = function(value){
+  class(value) = c(class(value),"toml_vector")
+  return(value)
+}
+
 #' TOML perser function
 #'
 #' TOML perser which read lines as much as need for create one object and return unused lines
